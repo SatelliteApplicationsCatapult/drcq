@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta id="viewport" content="width=device-width, initial-scale=1">
+    <title>Disaster Relief Coordination Questionnaire</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/stylesheet.css" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/application.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">The Disaster Relief Coordination Questionnaire</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+        <form action="drhq.hacktag.uk/report" method="POST">
+
+            <div class="col-sm-12 theme-showcase" role="main">
+                <div class="jumbotron">
+                  <h1>DRCQ - Main Information</h1>
+                  <p>This is the Disaster Relief Coordination Questionnaire. You have been sent this link because a natural disaster has taken place in your area. The purpose of this webpage is to coordinate disaster relief locally: by filling out this questionnaire, if you are in need, we can send someone to help you. You can also provide assistance to people in need yourself. <br><br>
+                  The questionnaire will not take long and may help to save lives. Please fill in as much information as you can and we will try and get back in touch with you as soon as possible. Thank you for your time. Stay safe.</p>
+                  Results collected at <a href="http://drhq.hacktag.uk/reports"> http://drhq.hacktag.uk/reports </a>
+                </div>
+            </div>
+
+            <h3>Personal Information <span class="label label-default"></span></h3>
+
+            <div class="input-group">
+                <span class="input-group-addon">Full Name</span>
+                <input type="text" class="form-control" id="name">
+            </div>
+
+            <div class="input-group">
+                <span class="input-group-addon">Mobile Number</span>
+                <input type="text" class="form-control" id="phone">
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon">Email Address (optional)</span>
+                <input type="text" class="form-control" id="email">
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon">Age</span>
+                <input type="number" class="form-control" id="age">
+            </div>
+            <div class="input-group">
+                  <span class="input-group-addon">Gender</span>
+                 <div class="dropdown">
+                    <select id="gender">
+                        <option value="0">Male</option>
+                        <option value="1">Female</option>
+                     </select>
+                 </div>
+            </div>
+
+            <input type="hidden" class="form-control" id="lat" value="51.575812">
+            <input type="hidden" class="form-control" id="lon" value="-1.312943">
+            <input type="hidden" class="form-control" id="message" value="NA">
+
+            <div class="input-group">
+              <span class="input-group-addon">Do you NEED HELP ?
+                <input type="checkbox" value="1" id="needHelp">
+              </span>
+            </div>
+            <div class="input-group">
+              <span class="input-group-addon">Can you assist others ?
+                <input type="checkbox" value="1" id="assist">
+              </span>
+            </div>
+
+            <h3 id="header">Information For Disaster Relief</h3>
+
+
+            <div id="assistGroup">
+
+            <h4><b>Resources Available</b></h4>
+
+            Please check the resources that you could provide
+
+            <div class="input-group">
+                <span class="input-group-addon">
+                    Clean Water
+                    <input type="checkbox" value="1" id="water">
+                </span>
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon">
+                    Food
+                    <input type="checkbox" value="1" id ="food">
+                </span>
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon">
+                    Medicine
+                    <input type="checkbox" value="1" id ="medicine">
+                </span>
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon">
+                    Shelter
+                    <input type="checkbox" value="1" id ="shelter">
+                </span>
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon">
+                    Communications
+                    <input type="checkbox" value="1" id ="comms">
+                </span>
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon">
+                    Can any of your vehicles operate off-road?
+                    <input type="checkbox" value="1" id ="offroad">
+                </span>
+            </div>
+
+
+            <br>
+            <h4><b>Mobility</b></h4>
+            If you are able to provide assistance to others, please tell us how mobile you are and vehicles you have available using the number system below:
+            <p>
+
+            <div class="dropdown">
+                <label>Please Select Level of Mobility</label>
+                <select name="x">
+                    <option value="0">0 - No vehicle</option>
+                    <option value="1">1 - Bicycle</option>
+                    <option value="2">2 - Motorbike</option>
+                    <option value="3">3 - Small Car</option>
+                    <option value="4">4 - Large Car</option>
+                    <option value="5">5 - Van</option>
+                    <option value="6">6 - Small Truck</option>
+                    <option value="7">7 - Large Truck</option>
+                </select>
+            </div>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Level</th>
+                        <th>Vehicle Available
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">0</th>
+                        <td>No vehicle</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Bicycle</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Motorbike</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Small Car</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">4</th>
+                        <td>Large Car</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">5</th>
+                        <td>Van</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">6</th>
+                        <td>Small Truck</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">7</th>
+                        <td>Large Truck</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+        <div id="needHelpGroup">
+
+            <br>
+            <h4><b>Injury Scale</b></h4>
+            Please tell us the severity of your injury using the number system below: <br>
+            <p>
+
+            <div class="dropdown">
+                <label>Please Select Level of Injury</label>
+                <select name="x">
+                    <option value="0">0 - No Injury</option>
+                    <option value="1">1 - Very Slight</option>
+                    <option value="2">2 - Slight</option>
+                    <option value="3">3 - Mild</option>
+                    <option value="4">4 - Medium</option>
+                    <option value="5">5 - Serious</option>
+                    <option value="4">6 - Very Serious</option>
+                    <option value="5">7 - Extreme</option>
+                    <option value="5">8 - Very Extreme</option>
+                </select>
+            </div>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Level</th>
+                        <th>Severity of Injury
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">0</th>
+                        <td>No injury</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Very Slight - Does not require medical attention. Can be treated individually (e.g. mild headache)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Slight - Does not require medical attention. Can be treated individually (e.g. small cut)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Mild - May require medical attention at some point (e.g. muscular injury)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">4</th>
+                        <td>Medium - Requires medical attention at some point (e.g. shallow cut)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">5</th>
+                        <td>Serious - Requires medical attention (e.g. severe headache)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">6</th>
+                        <td>Very Serious - Requires immediate medical attention (e.g. deep cut, shallow breathing)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">7</th>
+                        <td>Extreme - In immediate danger. Requires immediate medical attention (e.g. heavy bleeding, head injury, weak pulse)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">8</th>
+                        <td>Very Extreme - Risk of death. Requires immediate medical attention (e.g. loss of limbs, unconsciousness, no breathing)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="input-group">
+                <span class="input-group-addon">Are you able to walk or move?
+                    <input type="checkbox" id="walk">
+                </span>
+            </div>
+        </div>
+        <br>
+        <p>
+            <button class="btn btn-primary col-sm-12 col-md-4 col-lg-2" type="submit">Submit</button>
+        </p>
+    </form>
+</div>
